@@ -7,23 +7,19 @@ import path from "path";
 
 
 dotenv.config();
-const app = express();
+
 
 cloudinary.v2.config({
   cloud_name: process.env.Cloud_Name,
   api_key: process.env.Cloud_Api,
   api_secret: process.env.Cloud_Secret,
 });
-// app.use(cors({
-//   origin: 'http://localhost:5000', // Replace with your frontend URL
-//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-//   credentials: true, // If you're using cookies or other credentials
-// }));
 
 
 
-const port = process.env.PORT;
 
+const port = process.env.PORT||5001;
+const app = express();
 //using middlewares
 app.use(express.json());
 app.use(cookieParser());
